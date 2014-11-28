@@ -2,8 +2,8 @@ import random
 from snake import *
 
 # Barva glave in repa
-COLOR_HEAD = "green" 
-COLOR_TAIL = "blue" 
+COLOR_HEAD = "red" 
+COLOR_TAIL = "red" 
 
 class EgyptianCobra(Snake):
     def __init__(self, field, x, y, dx, dy):
@@ -12,7 +12,7 @@ class EgyptianCobra(Snake):
             field = field,
             color_head = COLOR_HEAD,
             color_tail = COLOR_TAIL,
-            x = x, y = y, dx = dx, dy = dy)
+            x = x, y = y, dx = random.randint(1,5), dy = dy)
         # V konstruktor lahko dodate se kaksne atribute
 
     def turn(self):
@@ -26,9 +26,9 @@ class EgyptianCobra(Snake):
            * spisek koordinat vseh misk je self.field.mice.keys()
            * spisek vseh kac je self.field.snakes
         """
-           
-        if random.randint(0,10) < 5:
-            if random.randint(0,1) == 1:
+        #obrat  
+        if random.randint(0,30) < 5:
+            if random.randint(0,1)==1:                             
                 self.turn_left()
             else:
                 self.turn_right()
